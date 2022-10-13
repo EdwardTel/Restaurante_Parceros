@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Restaurante Parceros</string>
+
+    <string name="et_nombres_hint">Nombres</string>
+    <string name="et_apellidos_hint">Apellidos</string>
+    <string name="et_contrasena_hint">Contraseña</string>
+    <string name="et_email_hint">E-mail</string>
+    <string name="et_telefono_hint">Teléfono</string>
+
+    <string name="btn_registrar">Registrarse</string>
+
+</resources>
