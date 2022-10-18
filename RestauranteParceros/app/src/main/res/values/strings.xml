@@ -19,7 +19,7 @@
 
     <!-- Buttons -->
     <string name="login_button_login">Login</string>
-    <string name="login_button_registrarse">Registrarse</string>
-    <string name="registro_button_registrar">Registrarse</string>
+    <string name="login_button_registrarse"><u>Crear Cuenta</u></string>
+    <string name="registro_button_registrar">Registrar</string>
 
 </resources>
