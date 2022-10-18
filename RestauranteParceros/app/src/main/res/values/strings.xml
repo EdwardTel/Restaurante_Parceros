@@ -1,12 +1,25 @@
 <resources>
     <string name="app_name">Restaurante Parceros</string>
 
-    <string name="et_nombres_hint">Nombres</string>
-    <string name="et_apellidos_hint">Apellidos</string>
-    <string name="et_contrasena_hint">Contraseña</string>
-    <string name="et_email_hint">E-mail</string>
-    <string name="et_telefono_hint">Teléfono</string>
+    <!-- TextViews -->
+    <string name="login_tv_registrarse">Registrarse</string>
+    <string name="login_chktv_aceptar">Acepto</string>
 
-    <string name="btn_registrar">Registrarse</string>
+    <!-- EditText -->
+    <string name="login_et_correo_hint">Correo</string>
+    <string name="login_et_pass_hint">Contraseña</string>
+    <string name="registro_et_nombres_hint">Nombres</string>
+    <string name="registro_et_apellidos_hint">Apellidos</string>
+    <string name="registro_et_contrasena_hint">Contraseña</string>
+    <string name="registro_et_email_hint">E-mail</string>
+    <string name="registro_et_telefono_hint">Teléfono</string>
+
+    <!-- TextInput Layout -->
+    <string name="registro_email_placeholder">abc@def.com</string>
+
+    <!-- Buttons -->
+    <string name="login_button_login">Login</string>
+    <string name="login_button_registrarse">Registrarse</string>
+    <string name="registro_button_registrar">Registrarse</string>
 
 </resources>
