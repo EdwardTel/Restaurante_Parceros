@@ -3,12 +3,16 @@ package com.example.restauranteparceros
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import java.util.regex.Pattern
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnRegistro : Button
     private lateinit var etEmail : EditText
     private lateinit var etPass : EditText
+
 
     private lateinit var firebaseAuth : FirebaseAuth
     private lateinit var authStateListener : FirebaseAuth.AuthStateListener
@@ -29,7 +34,10 @@ class MainActivity : AppCompatActivity() {
         etEmail = findViewById(R.id.login_et_email)
         etPass = findViewById(R.id.login_et_pass)
 
+
         firebaseAuth = Firebase.auth
+
+
 
         btnLogin.setOnClickListener {
             if(etEmail.text.isEmpty() || etPass.text.isEmpty()){
