@@ -71,8 +71,6 @@ class EntradasFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        tvPrueba = requireView().findViewById(R.id.prueba)
-
         recyclerView = requireView().findViewById(R.id.recycler_view_entradas)
         recyclerView.layoutManager= LinearLayoutManager(context)
         recyclerView.setHasFixedSize(true)

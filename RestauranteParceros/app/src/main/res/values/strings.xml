@@ -10,6 +10,7 @@
     <string name="fragment_tv_ordenar_mesa">Numero de tu mesa</string>
 
 
+
     <!-- EditText -->
     <string name="login_et_correo_hint">Correo</string>
     <string name="login_et_pass_hint">Contraseña</string>
@@ -20,6 +21,7 @@
     <string name="registro_et_telefono_hint">Teléfono</string>
     <string name="cambiar_pass_et_correo_hint">Correo de la cuenta</string>
     <string name="fragment_et_ordenar_mesaNumero">Número de tu mesa</string>
+    <string name="recycler_et_cantidad_hint">Cantidad</string>
 
 
     <!-- TextInput Layout -->
@@ -50,6 +52,7 @@
     <string name="fragment_btn_postres">Postres</string>
     <string name="fragment_btn_bebidas">Bebidas</string>
     <string name="fragment_btn_ordenar">Ordenar</string>
+    <string name="recycler_btn_agregar">Agregar</string>
 
     <string name="menu_home">Acerca de nosotros</string>
     <string name="menu_ordenes">Ordenar</string>

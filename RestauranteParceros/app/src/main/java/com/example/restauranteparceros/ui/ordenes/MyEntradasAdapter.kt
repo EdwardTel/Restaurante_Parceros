@@ -21,6 +21,7 @@ class MyEntradasAdapter(private val comidasList : MutableList<Comidas>): Recycle
 
         val comida: Comidas = comidasList[position]
 
+        holder.nombre.text = comida.nombre
         holder.descripcion.text = comida.descripcion
         holder.precio.text = comida.precio.toString()
     }
@@ -29,6 +30,7 @@ class MyEntradasAdapter(private val comidasList : MutableList<Comidas>): Recycle
 
     inner class MyEntradasViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
 
+        val nombre = itemView.findViewById<TextView>(R.id.entradas_nombre)
         val descripcion = itemView.findViewById<TextView>(R.id.entradas_descripcion)
         val precio = itemView.findViewById<TextView>(R.id.entradas_precio)
     }
