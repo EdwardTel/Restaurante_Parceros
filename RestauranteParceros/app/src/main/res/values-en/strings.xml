@@ -3,7 +3,8 @@
 
     <!-- TextViews -->
     <string name="login_tv_registrarse">Register</string>
-    <string name="login_chktv_aceptar">Submit</string>
+    <string name="login_chktv_aceptar">Agree</string>
+    <string name="home_tv_prueba">App\'s Home</string>
 
     <!-- EditText -->
     <string name="login_et_correo_hint">Email</string>
@@ -21,5 +22,7 @@
     <string name="login_button_login">Login</string>
     <string name="login_button_registrarse"><u>Create account</u></string>
     <string name="registro_button_registrar">Register</string>
+    <string name="home_button_regresar">Back</string>
+    <string name="registro_button_regresar">Back</string>
 
 </resources>

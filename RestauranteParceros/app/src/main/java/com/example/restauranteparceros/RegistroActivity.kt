@@ -1,6 +1,5 @@
 package com.example.restauranteparceros
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -24,6 +23,7 @@ class RegistroActivity : AppCompatActivity() {
     private lateinit var tilPass : TextInputLayout
 
     private lateinit var btnRegistrarse : Button
+    private lateinit var btnRegresar : Button
 
     private lateinit var firebaseAuth: FirebaseAuth
 
@@ -40,6 +40,7 @@ class RegistroActivity : AppCompatActivity() {
         tilPass = findViewById(R.id.registro_til_pass)
 
         btnRegistrarse = findViewById(R.id.registro_button_registrarse)
+        btnRegresar = findViewById(R.id.registro_btn_regresar)
 
         firebaseAuth = Firebase.auth
 
@@ -89,6 +90,10 @@ class RegistroActivity : AppCompatActivity() {
 
                 createAccount(userNombre, userApellido, userTelefono, userEmail, userPass)
             }
+        }
+
+        btnRegresar.setOnClickListener {
+            this.finish()
         }
     }
 

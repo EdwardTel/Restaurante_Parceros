@@ -31,7 +31,8 @@
             android:id="@+id/registro_et_nombre"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/registro_et_nombres_hint" />
+            android:hint="@string/registro_et_nombres_hint"
+            android:inputType="textPersonName" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -48,7 +49,8 @@
             style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/registro_et_apellidos_hint" />
+            android:hint="@string/registro_et_apellidos_hint"
+            android:inputType="textPersonName" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,7 +102,8 @@
             style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/registro_et_telefono_hint" />
+            android:hint="@string/registro_et_telefono_hint"
+            android:inputType="phone" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <CheckedTextView
@@ -120,5 +123,15 @@
         android:text="@string/registro_button_registrar"
         app:layout_constraintStart_toStartOf="@+id/registro_til_pass"
         app:layout_constraintTop_toBottomOf="@+id/checkedTextView" />
+
+    <Button
+        android:id="@+id/registro_btn_regresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/registro_button_regresar"
+        app:layout_constraintEnd_toEndOf="@+id/registro_button_registrarse"
+        app:layout_constraintStart_toStartOf="@+id/registro_button_registrarse"
+        app:layout_constraintTop_toBottomOf="@+id/registro_button_registrarse" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

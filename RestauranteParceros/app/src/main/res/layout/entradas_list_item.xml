@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/entradas_imagen"
+            android:layout_width="250dp"
+            android:layout_height="129dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/entradas_descripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/entradas_imagen"
+            app:layout_constraintTop_toBottomOf="@+id/entradas_imagen"
+            tools:text="Descripcion" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout6"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/entradas_imagen"
+            app:layout_constraintTop_toBottomOf="@+id/entradas_precio">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/entradas_et_cantidad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="hint" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/entradas_btn_agregar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Button"
+            app:layout_constraintStart_toEndOf="@+id/textInputLayout6"
+            app:layout_constraintTop_toTopOf="@+id/textInputLayout6" />
+
+        <TextView
+            android:id="@+id/entradas_precio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/entradas_imagen"
+            app:layout_constraintTop_toBottomOf="@+id/entradas_descripcion"
+            tools:text="Precio" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
