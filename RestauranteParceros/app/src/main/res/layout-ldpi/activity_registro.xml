@@ -29,8 +29,8 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registro_et_nombre"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="163dp"
+            android:layout_height="39dp"
             android:hint="@string/registro_et_nombres_hint" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -46,8 +46,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registro_et_apellido"
             style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="167dp"
+            android:layout_height="50dp"
             android:hint="@string/registro_et_apellidos_hint" />
 
     </com.google.android.material.textfield.TextInputLayout>
