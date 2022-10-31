@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">Restaurante Parceros</string>
+
+    <!-- TextViews -->
+    <string name="login_tv_registrarse">Se Registrar</string>
+    <string name="login_chktv_aceptar">Acessar</string>
+    <string name="home_tv_prueba">Home de la app</string>
+    <string name="cambiar_pass_tv_correo">Digite Seu E-mail</string>
+    <string name="fragment_tv_ordenar_title">Nosso Cardápio</string>
+    <string name="fragment_tv_ordenar_mesa">Numero Da Sua Mesa</string>
+
+
+
+    <!-- EditText -->
+    <string name="login_et_correo_hint">E-mail</string>
+    <string name="login_et_pass_hint">Senha</string>
+    <string name="registro_et_nombres_hint">Nome</string>
+    <string name="registro_et_apellidos_hint">Sobrenome</string>
+    <string name="registro_et_contrasena_hint">Senha</string>
+    <string name="registro_et_email_hint">Email</string>
+    <string name="registro_et_telefono_hint">Telefone</string>
+    <string name="cambiar_pass_et_correo_hint">E-mail Da Sua Conta</string>
+    <string name="fragment_et_ordenar_mesaNumero">Numero Da Sua Mesa</string>
+    <string name="recycler_et_cantidad_hint">Quantidade</string>
+
+    <!-- TextInput Layout -->
+    <string name="registro_email_placeholder">abc@def.com</string>
+    <string name="fragment_tv_ordenar_mesa_helper">Em Branco Para Levar</string>
+
+    <!-- Buttons -->
+    <string name="login_button_login">Login</string>
+    <string name="login_button_registrarse"><u>Criar Conta</u></string>
+    <string name="registro_button_registrar">Registro</string>
+    <string name="home_button_regresar">Voltar</string>
+    <string name="registro_button_regresar">Voltar</string>
+    <string name="registro_button_cambiar_pass">Esqueci Minha Senha</string>
+    <string name="cambiar_pass_button_enviar">Redefinir Senha</string>
+    <string name="title_activity_asdf">asdf</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="fragment_btn_entradas">Aperitivos</string>
+    <string name="fragment_btn_platos">Pratos Quentes</string>
+    <string name="fragment_btn_postres">Sobremesas</string>
+    <string name="fragment_btn_bebidas">Bebidas</string>
+    <string name="fragment_btn_ordenar">Fazer Um Pedido</string>
+    <string name="recycler_btn_agregar">Adicionar</string>
+
+    <string name="menu_home">Nossa História</string>
+    <string name="menu_ordenes">Ordenar</string>
+    <string name="menu_slideshow">Pagamento</string>
+    <string name="ordenes_entradas">Aperitivos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
