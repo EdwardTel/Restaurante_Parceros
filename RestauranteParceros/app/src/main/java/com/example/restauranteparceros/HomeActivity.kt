@@ -3,8 +3,8 @@ package com.example.restauranteparceros
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -16,11 +16,9 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.restauranteparceros.databinding.ActivityHomeBinding
-import com.example.restauranteparceros.ui.home.HomeViewModel
-import com.example.restauranteparceros.ui.ordenes.Comidas
+import com.example.restauranteparceros.ui.acerca.HomeViewModel
+import com.example.restauranteparceros.ui.Comidas
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.FirebaseFirestoreException
-import com.google.firebase.firestore.QuerySnapshot
 
 class HomeActivity : AppCompatActivity() {
 
@@ -71,61 +69,59 @@ class HomeActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_home)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_settings -> {
+                this.finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+
     private fun getMenu(){
-        var db = FirebaseFirestore.getInstance()
+        val db = FirebaseFirestore.getInstance()
 
-        db.collection("carta")
-            .addSnapshotListener{ query, error ->
-                Toast.makeText(baseContext,"exito al conectar FireStore", Toast.LENGTH_SHORT).show()
-                if(error!= null){
-                    Toast.makeText(baseContext,"Falla al cargar el menú", Toast.LENGTH_SHORT).show()
-                }
+        db.collection("carta").get()
+            .addOnSuccessListener {
+                for(doc in it.documents){
+                    val descripcion = doc.getString("Descripcion")
+                    val nombre= doc.getString("Nombre")
+                    val tipo= doc.getString("Tipo")
+                    val img= doc.getString("Img")
+                    val precio= doc.get("Precio").toString().toDouble()
 
-                for(document in query!!){
-                    val descripcion = document.getString("Descripcion")
-                    val nombre = document.getString("Nombre")
-                    val tipo = document.getString("Tipo")
-                    val precio = document.get("Precio")
+                    /*Log.d("nombre", nombre!!)
+                    Log.d("Descripcion", descripcion!!)
+                    Log.d("Imagen", img!!)
+                    Log.d("Tipo", tipo!!)
+                    Log.d("Precio", precio.toString())*/
 
-                    val comida = Comidas(tipo,nombre,descripcion, precio.toString().toDouble())
-
+                    val comida = Comidas(tipo, nombre, descripcion, img, precio)
                     comidasEnBD.add(comida)
-
                 }
 
                 homeViewModel.comidasEnBD = comidasEnBD
+
                 homeViewModel.setEntradas()
+                homeViewModel.setPlatos()
+                homeViewModel.setPostres()
+                homeViewModel.setBebidas()
 
-                var hola =homeViewModel.comidasEnBD
-
+                val hola= homeViewModel.comidasEnBD
                 for (comida in hola){
                     Log.d("nombre", comida.nombre!!)
                     Log.d("Descripcion", comida.descripcion!!)
+                    Log.d("Imagen", comida.img!!)
                     Log.d("Tipo", comida.tipo!!)
                     Log.d("Precio", comida.precio.toString())
                 }
 
-                //Toast.makeText(baseContext,"Cargado al viewModel", Toast.LENGTH_SHORT).show()
-            }
-            /*.get()
-            .addOnSuccessListener{
-                Toast.makeText(baseContext,"exito al conectar FireStore", Toast.LENGTH_SHORT).show()
-
-                for(document in it){
-                    val descripcion = document.getString("Descripcion")
-                    val nombre = document.getString("Nombre")
-                    val tipo = document.getString("Tipo")
-                    val precio = document.get("Precio")
-
-                    val comida = Comidas(tipo,nombre,descripcion, precio.toString().toDouble())
-
-                    comidasEnBD.add(comida)
-                }
-                homeViewModel.distribuirComidas(comidasEnBD)
-                Toast.makeText(baseContext,"Cargado al viewModel", Toast.LENGTH_SHORT).show()
-
             }.addOnFailureListener { exception ->
-                Toast.makeText(baseContext,"Falla al cargar el menú", Toast.LENGTH_SHORT).show()
-            }*/
+                Toast.makeText(baseContext,"No se cargó la carta", Toast.LENGTH_SHORT).show()
+                Log.w("Malo", "Error getting documents: ", exception)
+            }
     }
 }

@@ -1,21 +1,20 @@
-package com.example.restauranteparceros.ui.ordenes
+package com.example.restauranteparceros.ui.categorias
 
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.restauranteparceros.R
-import com.example.restauranteparceros.ui.home.HomeViewModel
+import com.example.restauranteparceros.databinding.FragmentBebidasBinding
+import com.example.restauranteparceros.databinding.FragmentPlatosBinding
+import com.example.restauranteparceros.databinding.FragmentPostresBinding
+import com.example.restauranteparceros.ui.Comidas
+import com.example.restauranteparceros.ui.acerca.HomeViewModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,17 +26,17 @@ private const val ARG_PARAM2 = "param2"
  * Use the [EntradasFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class EntradasFragment : Fragment() {
+class BebidasFragment : Fragment() {
+
+    private var _binding: FragmentBebidasBinding? = null
+    private val binding get() = _binding!!
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
 
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var myAdapter: MyEntradasAdapter
-    private lateinit var listaEntradas : MutableList<Comidas>
-    private lateinit var tvPrueba: TextView
-
-    //private lateinit var binding : FragmentEntradasBinding
+    private lateinit var listaBebidas : MutableList<Comidas>
+    private lateinit var bebidasAdapter: BebidasAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,35 +49,54 @@ class EntradasFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        listaEntradas = mutableListOf()
+    ): View {
+        _binding = FragmentBebidasBinding.inflate(inflater, container,false)
+        val root: View = binding.root
+
+        listaBebidas = mutableListOf()
+
         val homeViewModel =
             ViewModelProvider(requireActivity()).get(HomeViewModel::class.java)
 
-        homeViewModel.entradas.observe(viewLifecycleOwner){
-
+        homeViewModel.bebidas.observe(viewLifecycleOwner){
             for(comida in it){
                 Log.d("nombre", comida.nombre!!)
-                listaEntradas.add(comida)
+                listaBebidas.add(comida)
             }
-
         }
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_entradas, container, false)
-
+        return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        recyclerView = requireView().findViewById(R.id.recycler_view_entradas)
-        recyclerView.layoutManager= LinearLayoutManager(context)
-        recyclerView.setHasFixedSize(true)
-        myAdapter = MyEntradasAdapter(listaEntradas)
-        recyclerView.adapter = myAdapter
+        binding.recyclerViewBebidas.setHasFixedSize(true)
+        binding.recyclerViewBebidas.layoutManager= LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
+        bebidasAdapter = BebidasAdapter(listaBebidas)
+        binding.recyclerViewBebidas.adapter = bebidasAdapter
+
+        bebidasAdapter.onItemClick = {
+
+            val bundle = Bundle()
+            bundle.putString("tipo", it.tipo)
+            bundle.putString("nombre", it.nombre)
+            bundle.putString("descripcion", it.descripcion)
+            bundle.putString("img", it.img)
+            bundle.putDouble("precio", it.precio!!)
+            findNavController().navigate(R.id.action_bebidas_to_detail, bundle)
+
+            /*val i = Intent(requireContext(), DetailActivity::class.java)
+            i.putExtra("comida", it)
+            startActivity(i)*/
+        }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 
     companion object {
         /**

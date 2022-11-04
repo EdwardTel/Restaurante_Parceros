@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.restauranteparceros.ui.home.HomeFragment"
+        android:name="com.example.restauranteparceros.ui.acerca.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
@@ -19,17 +19,67 @@
         <action
             android:id="@+id/action_nav_ordenes_to_entradas"
             app:destination="@id/entradas" />
+        <action
+            android:id="@+id/action_nav_ordenes_to_platos"
+            app:destination="@id/platos" />
+        <action
+            android:id="@+id/action_nav_ordenes_to_postres"
+            app:destination="@id/postres" />
+        <action
+            android:id="@+id/action_nav_ordenes_to_bebidas"
+            app:destination="@id/bebidas" />
     </fragment>
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.example.restauranteparceros.ui.slideshow.SlideshowFragment"
+        android:name="com.example.restauranteparceros.ui.cuenta.CuentaFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_cuenta" />
 
     <fragment
         android:id="@+id/entradas"
-        android:name="com.example.restauranteparceros.ui.ordenes.EntradasFragment"
+        android:name="com.example.restauranteparceros.ui.categorias.EntradasFragment"
         android:label="@string/ordenes_entradas"
-        tools:layout="@layout/fragment_entradas" />
+        tools:layout="@layout/fragment_entradas" >
+        <action
+            android:id="@+id/action_entradas_to_detail"
+            app:destination="@id/detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/platos"
+        android:name="com.example.restauranteparceros.ui.categorias.PlatosFragment"
+        android:label="@string/ordenes_platos"
+        tools:layout="@layout/fragment_platos" >
+        <action
+            android:id="@+id/action_platos_to_detail"
+            app:destination="@id/detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/postres"
+        android:name="com.example.restauranteparceros.ui.categorias.PostresFragment"
+        android:label="@string/ordenes_postres"
+        tools:layout="@layout/fragment_postres" >
+        <action
+            android:id="@+id/action_postres_to_detail"
+            app:destination="@id/detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bebidas"
+        android:name="com.example.restauranteparceros.ui.categorias.BebidasFragment"
+        android:label="@string/ordenes_bebidas"
+        tools:layout="@layout/fragment_bebidas" >
+        <action
+            android:id="@+id/action_bebidas_to_detail"
+            app:destination="@id/detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detail"
+        android:name="com.example.restauranteparceros.ui.DetailFragment"
+        android:label="@string/detail"
+        tools:layout="@layout/fragment_detail" />
+
 </navigation>

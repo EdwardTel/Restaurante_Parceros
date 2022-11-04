@@ -1,5 +1,6 @@
 package com.example.restauranteparceros.ui.ordenes
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -43,6 +44,46 @@ class OrdenesFragment : Fragment() {
         binding.fragmentBtnEntradas.setOnClickListener{
             findNavController().navigate(R.id.action_nav_ordenes_to_entradas)
         }
+
+        binding.fragmentBtnPlatos.setOnClickListener{
+            findNavController().navigate(R.id.action_nav_ordenes_to_platos)
+        }
+
+        binding.fragmentBtnPostres.setOnClickListener{
+            findNavController().navigate(R.id.action_nav_ordenes_to_postres)
+        }
+
+        binding.fragmentBtnBebidas.setOnClickListener{
+            findNavController().navigate(R.id.action_nav_ordenes_to_bebidas)
+        }
+
+        val checkEntradas = binding.fragmentOrdenesTvChkEntradas
+        val checkPlatos = binding.fragmentOrdenesTvChkPlatos
+        val checkPostres= binding.fragmentOrdenesTvChkPostres
+        val checkBebidas = binding.fragmentOrdenesTvChkBebidas
+
+        //#36D99A color para los seleccionados
+
+        if(checkEntradas.text.isNullOrEmpty()){
+            checkEntradas.setTextColor(Color.parseColor("#853BD9"))
+            checkEntradas.text= "Sin seleccionar"
+        }
+
+        if(checkPlatos.text.isNullOrEmpty()){
+            checkPlatos.setTextColor(Color.parseColor("#853BD9"))
+            checkPlatos.text= "Sin seleccionar"
+        }
+
+        if(checkPostres.text.isNullOrEmpty()){
+            checkPostres.setTextColor(Color.parseColor("#853BD9"))
+            checkPostres.text= "Sin seleccionar"
+        }
+
+        if(checkBebidas.text.isNullOrEmpty()){
+            checkBebidas.setTextColor(Color.parseColor("#853BD9"))
+            checkBebidas.text= "Sin seleccionar"
+        }
+
     }
 
     override fun onDestroyView() {

@@ -1,18 +1,13 @@
-package com.example.restauranteparceros.ui.ordenes
+package com.example.restauranteparceros.ui
 
-class OrganizadorMenu() {
-
-    /*private var comidasSinOrdenar : MutableList<Comidas>
-
-    init {
-        comidasSinOrdenar = listaComidas
-    }*/
+class OrganizadorMenu{
 
     fun GetEntradas(listaComidas: MutableList<Comidas>): MutableList<Comidas>{
 
-        var listaEntradas : MutableList<Comidas> = mutableListOf()
+        val listaEntradas : MutableList<Comidas> = mutableListOf()
+
         for (comida in listaComidas){
-            if(comida.tipo=="Entrada"){
+            if(comida.tipo.equals("Entrada")){
                 listaEntradas.add(comida)
             }
         }
@@ -21,7 +16,7 @@ class OrganizadorMenu() {
 
     fun GetPlatos(listaComidas: MutableList<Comidas>): MutableList<Comidas>{
 
-        var listaPlatos : MutableList<Comidas> = mutableListOf()
+        val listaPlatos : MutableList<Comidas> = mutableListOf()
 
         for (comida in listaComidas){
             if(comida.tipo.equals("Plato")){
@@ -32,7 +27,7 @@ class OrganizadorMenu() {
     }
 
     fun GetPostres(listaComidas: MutableList<Comidas>): MutableList<Comidas>{
-        var listaPostres : MutableList<Comidas> = mutableListOf()
+        val listaPostres : MutableList<Comidas> = mutableListOf()
 
         for (comida in listaComidas){
             if(comida.tipo == "Postre"){
@@ -44,7 +39,7 @@ class OrganizadorMenu() {
 
     fun GetBebidas(listaComidas: MutableList<Comidas>): MutableList<Comidas>{
 
-        var listaBebidas: MutableList<Comidas> = mutableListOf()
+        val listaBebidas: MutableList<Comidas> = mutableListOf()
         for (comida in listaComidas){
             if(comida.tipo.equals("Bebida")){
                 listaBebidas.add(comida)

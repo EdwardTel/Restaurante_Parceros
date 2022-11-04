@@ -3,6 +3,7 @@ package com.example.restauranteparceros.ui.ordenes
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.restauranteparceros.ui.Comidas
 
 class OrdenesViewModel : ViewModel() {
 
@@ -10,4 +11,6 @@ class OrdenesViewModel : ViewModel() {
         value = "This is Ordenes Fragment"
     }
     val text: LiveData<String> = _text
+
+    val pedidosEntradas: MutableList<Comidas> = mutableListOf()
 }
