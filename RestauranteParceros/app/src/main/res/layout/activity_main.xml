@@ -35,7 +35,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
+        android:id="@+id/login_til_pass"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -54,11 +54,11 @@
         android:id="@+id/login_button_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:text="@string/login_button_login"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+        app:layout_constraintEnd_toEndOf="@+id/login_til_pass"
+        app:layout_constraintStart_toStartOf="@+id/login_til_pass"
+        app:layout_constraintTop_toBottomOf="@+id/login_button_cambiar_contraseña" />
 
     <Button
         android:id="@+id/login_button_registrar"
@@ -80,5 +80,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:srcCompat="@drawable/parceros" />
+
+    <Button
+        android:id="@+id/login_button_cambiar_contraseña"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registro_button_cambiar_pass"
+        app:layout_constraintStart_toStartOf="@+id/login_til_pass"
+        app:layout_constraintTop_toBottomOf="@+id/login_til_pass" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

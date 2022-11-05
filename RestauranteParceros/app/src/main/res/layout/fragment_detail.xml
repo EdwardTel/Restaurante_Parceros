@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.DetailFragment">
+
+    <TextView
+        android:id="@+id/fragment_detail_tv_descripcion"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/fragment_detail_imagen"
+        app:layout_constraintStart_toStartOf="@+id/fragment_detail_imagen"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_detail_tv_titulo_descripcion"
+        tools:text="Descripcion" />
+
+    <TextView
+        android:id="@+id/fragment_detail_tv_titulo_descripcion"
+        style="@style/TextAppearance.Material3.TitleMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/detail_tv_descripcion"
+        app:layout_constraintStart_toStartOf="@+id/fragment_detail_imagen"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_detail_imagen" />
+
+    <TextView
+        android:id="@+id/fragment_detail_tv_precio"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Precio"
+        app:layout_constraintStart_toEndOf="@+id/fragment_detail_tv_titulo_precio"
+        app:layout_constraintTop_toTopOf="@+id/fragment_detail_tv_titulo_precio" />
+
+    <TextView
+        android:id="@+id/fragment_detail_tv_titulo_precio"
+        style="@style/TextAppearance.Material3.TitleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/detail_tv_precio"
+        app:layout_constraintStart_toStartOf="@+id/fragment_detail_tv_titulo_descripcion"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_detail_tv_descripcion" />
+
+    <ImageView
+        android:id="@+id/fragment_detail_imagen"
+        android:layout_width="360dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_cookie_50" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout6"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        android:hint="@string/detail_et_cantidad_hint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fragment_detail_et_cantidad"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/fragment_detail_btn_agregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/detail_btn_agregar"
+        app:layout_constraintStart_toEndOf="@+id/textInputLayout6"
+        app:layout_constraintTop_toTopOf="@+id/textInputLayout6" />
+</androidx.constraintlayout.widget.ConstraintLayout>

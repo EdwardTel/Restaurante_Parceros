@@ -2,8 +2,22 @@
     <string name="app_name">Restaurante Parceros</string>
 
     <!-- TextViews -->
+    <string name="fragment_home_tv_acercade">En este palacio de la comida colombiana exaltamos el sabor, el sasón y la creatividad de los mejores platos del país.\n\nQueremos preservar y extender nuestra cultura a todos los paladares conocedores de la exquisites y el buen gusto.
+    </string>
     <string name="login_tv_registrarse">Registrarse</string>
     <string name="login_chktv_aceptar">Acepto</string>
+    <string name="home_tv_prueba">Home de la app</string>
+    <string name="cambiar_pass_tv_correo">Ingresa tu correo</string>
+    <string name="fragment_tv_ordenar_title">Puedes ordenar multiples platos</string>
+    <string name="fragment_tv_ordenar_mesa">Numero de tu mesa</string>
+    <string name="entradas_list_tv_agregar">Toca para agregar</string>
+    <string name="detail_tv_precio">Precio:</string>
+    <string name="detail_tv_descripcion">Descripcion</string>
+
+    <string name="cuenta_tv_titulo_nombre">Nombre</string>
+    <string name="cuenta_tv_titulo_cantidad">Cantidad</string>
+    <string name="cuenta_tv_titulo_precio">Precio</string>
+
 
     <!-- EditText -->
     <string name="login_et_correo_hint">Correo</string>
@@ -13,13 +27,51 @@
     <string name="registro_et_contrasena_hint">Contraseña</string>
     <string name="registro_et_email_hint">E-mail</string>
     <string name="registro_et_telefono_hint">Teléfono</string>
+    <string name="cambiar_pass_et_correo_hint">Correo de la cuenta</string>
+    <string name="fragment_et_ordenar_mesaNumero">Número de tu mesa</string>
+    <string name="detail_et_cantidad_hint">Cantidad</string>
+
 
     <!-- TextInput Layout -->
     <string name="registro_email_placeholder">abc@def.com</string>
+    <string name="fragment_tv_ordenar_mesa_helper">En blanco para domicilio</string>
 
     <!-- Buttons -->
-    <string name="login_button_login">Login</string>
+    <string name="login_button_login">Entrar</string>
     <string name="login_button_registrarse"><u>Crear Cuenta</u></string>
     <string name="registro_button_registrar">Registrar</string>
+    <string name="home_button_regresar">Regresar</string>
+    <string name="registro_button_regresar">Regresar</string>
+    <string name="registro_button_cambiar_pass">Olvidé mi contraseña</string>
+    <string name="cambiar_pass_button_enviar">Restablecer Contraseña</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Salir</string>
+    <string name="fragment_btn_entradas">Entradas</string>
+    <string name="fragment_btn_platos">Platos</string>
+    <string name="fragment_btn_postres">Postres</string>
+    <string name="fragment_btn_bebidas">Bebidas</string>
+    <string name="fragment_btn_ordenar">Ordenar</string>
+    <string name="detail_btn_agregar">Agregar</string>
+    <string name="fragment_detail_btn_regresar">Regresar</string>
+
+    <string name="menu_home">Bienvenido</string>
+    <string name="menu_ordenes">Ordenar</string>
+    <string name="menu_slideshow">Pagar</string>
+    <string name="ordenes_entradas">Entradas</string>
+    <string name="ordenes_platos">Platos</string>
+    <string name="ordenes_postres">Postres</string>
+    <string name="ordenes_bebidas">Bebidas</string>
+
+    <string name="detail">Detalle</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
