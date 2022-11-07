@@ -8,14 +8,4 @@ import com.example.restauranteparceros.ui.Pedido
 
 class CuentaViewModel : ViewModel() {
     var listaPedidos: MutableList<Pedido> = mutableListOf()
-    var _pedidos = MutableLiveData<MutableList<Pedido>>()
-
-    fun readListaPedidos(){
-        _pedidos.apply {
-            value = listaPedidos
-        }
-    }
-
-
-    val pedidos: LiveData<MutableList<Pedido>> = _pedidos
 }

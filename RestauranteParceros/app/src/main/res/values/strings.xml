@@ -15,8 +15,9 @@
     <string name="detail_tv_descripcion">Descripcion</string>
 
     <string name="cuenta_tv_titulo_nombre">Nombre</string>
-    <string name="cuenta_tv_titulo_cantidad">Cantidad</string>
+    <string name="cuenta_tv_titulo_cantidad">C.</string>
     <string name="cuenta_tv_titulo_precio">Precio</string>
+    <string name="cuenta_tv_titulo_total">Total</string>
 
 
     <!-- EditText -->

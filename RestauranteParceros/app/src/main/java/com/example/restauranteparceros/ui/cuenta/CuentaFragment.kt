@@ -1,23 +1,21 @@
 package com.example.restauranteparceros.ui.cuenta
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.restauranteparceros.databinding.FragmentCuentaBinding
 
 class CuentaFragment : Fragment() {
 
     private var _binding: FragmentCuentaBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
+
+    private lateinit var cuentaAdapter: CuentaAdapter
+    private lateinit var cuentaViewModel: CuentaViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,54 +25,33 @@ class CuentaFragment : Fragment() {
         _binding = FragmentCuentaBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val cuentaViewModel =
+        cuentaViewModel =
             ViewModelProvider(requireActivity()).get(CuentaViewModel::class.java)
-
-        var tvNombre = binding.cuentaTvNombre
-        var tvCantidad = binding.cuentaTvCantidad
-        var tvPrecio = binding.cuentaTvPrecio
-        var listaNombres: MutableList<String?> = mutableListOf()
-
-        cuentaViewModel.pedidos.observe(viewLifecycleOwner) {
-
-            Toast.makeText(context,"Hola ViewModel", Toast.LENGTH_SHORT).show()
-
-            //var listaNombres: MutableList<String?> = mutableListOf()
-            var listaCantidades: MutableList<String?> = mutableListOf()
-            var listaPrecios: MutableList<String> = mutableListOf()
-
-            if(it.isNullOrEmpty()){
-                Log.d("Observer", "Hola if")
-
-                tvNombre.text = ""
-                tvCantidad.text = ""
-                tvPrecio.text = ""
-            }
-            else{
-                for(pedido in it){
-                    listaNombres.add(pedido.nombre+"\n")
-                }
-
-                tvNombre.text = listaNombres.toString()
-
-            }
-            //tvNombre.text = listaNombres[0]
-        }
-
-        for(a in cuentaViewModel.listaPedidos){
+        /*for(a in cuentaViewModel.listaPedidos){
             Log.d("Detail", a.nombre!!)
             Log.d("Detail", a.cantidad.toString())
             Log.d("Detail", a.precio.toString())
+        }*/
+        return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        var totalItems: Int = 0
+        var totalPagar: Double = 0.0
+
+        for (pedido in cuentaViewModel.listaPedidos){
+            totalItems = totalItems + pedido.cantidad!!
+            totalPagar = totalPagar + pedido.precio!!
         }
 
-        //tvNombre.text = listaNombres[0]
-
-        //binding.textSlideshow.text = cuentaViewModel.pedidosEntradas.toString()
-
-
-
-
-        return root
+        binding.recyclerViewCuenta.setHasFixedSize(true)
+        binding.recyclerViewCuenta.layoutManager= LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        cuentaAdapter = CuentaAdapter(cuentaViewModel.listaPedidos)
+        binding.recyclerViewCuenta.adapter = cuentaAdapter
+        binding.cuentaTvItems.text = totalItems.toString()
+        binding.cuentaTvTotal.text = totalPagar.toString()
     }
 
     override fun onDestroyView() {

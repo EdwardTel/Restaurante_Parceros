@@ -6,10 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.restauranteparceros.databinding.FragmentDetailBinding
 import com.example.restauranteparceros.ui.cuenta.CuentaViewModel
+import com.example.restauranteparceros.ui.ordenes.OrdenesFragment
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -55,24 +57,25 @@ class DetailFragment : Fragment() {
             val nombre = arguments?.getString("nombre")
             val descripcion = arguments?.getString("descripcion")
             val img = arguments?.getString("img")
-            val precio = arguments?.getDouble("precio")
+            val precioUnitario = arguments?.getDouble("precio")
 
             binding.fragmentDetailTvDescripcion.text = descripcion
-            binding.fragmentDetailTvPrecio.text = precio.toString()
+            binding.fragmentDetailTvPrecio.text = precioUnitario.toString()
             Glide.with(this).load(img).into(binding.fragmentDetailImagen)
 
             binding.fragmentDetailBtnAgregar.setOnClickListener {
                 val cantidad = binding.fragmentDetailEtCantidad.text.toString().toInt()
+                val precio = precioUnitario!! * cantidad
+                val pedido = Pedido(nombre, cantidad, precio, tipo)
 
-                val pedido = Pedido(nombre, cantidad, precio)
                 cuentaViewModel.listaPedidos.add(pedido)
-                cuentaViewModel.readListaPedidos()
+                Toast.makeText(context, "Agregado!",Toast.LENGTH_SHORT).show()
 
-                for (a in cuentaViewModel.listaPedidos) {
+                /*for (a in cuentaViewModel.listaPedidos) {
                     Log.d("Detail", a.nombre!!)
                     Log.d("Detail", a.cantidad.toString())
                     Log.d("Detail", a.precio.toString())
-                }
+                }*/
             }
         }
 

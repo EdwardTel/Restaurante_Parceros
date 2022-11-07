@@ -11,9 +11,9 @@
         style="@style/TextAppearance.Material3.TitleMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:text="@string/cuenta_tv_titulo_nombre"
+        app:layout_constraintEnd_toStartOf="@+id/cuenta_tv_titulo_cantidad"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,10 +22,9 @@
         style="@style/TextAppearance.Material3.TitleMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:text="@string/cuenta_tv_titulo_cantidad"
-        app:layout_constraintBottom_toBottomOf="@+id/cuenta_tv_titulo_nombre"
-        app:layout_constraintStart_toEndOf="@+id/cuenta_tv_titulo_nombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/cuenta_tv_titulo_nombre" />
 
     <TextView
@@ -33,42 +32,72 @@
         style="@style/TextAppearance.Material3.TitleMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:text="@string/cuenta_tv_titulo_precio"
-        app:layout_constraintBottom_toBottomOf="@+id/cuenta_tv_titulo_cantidad"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cuenta_tv_titulo_cantidad"
-        app:layout_constraintTop_toTopOf="@+id/cuenta_tv_titulo_cantidad" />
+        app:layout_constraintTop_toTopOf="@+id/cuenta_tv_titulo_nombre" />
 
-    <TextView
-        android:id="@+id/cuenta_tv_nombre"
-        style="@style/TextAppearance.Material3.BodyMedium"
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_cuenta"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/cuenta_tv_titulo_nombre"
-        app:layout_constraintStart_toStartOf="@+id/cuenta_tv_titulo_nombre"
-        app:layout_constraintTop_toBottomOf="@+id/cuenta_tv_titulo_nombre"
-        tools:text="N. producto" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cuenta_tv_titulo_nombre" />
 
-    <TextView
-        android:id="@+id/cuenta_tv_cantidad"
-        style="@style/TextAppearance.Material3.BodyMedium"
-        android:layout_width="wrap_content"
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/cuenta_tv_titulo_cantidad"
-        app:layout_constraintStart_toStartOf="@+id/cuenta_tv_titulo_cantidad"
-        app:layout_constraintTop_toBottomOf="@+id/cuenta_tv_titulo_cantidad"
-        tools:text="cantidad" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recycler_view_cuenta">
 
-    <TextView
-        android:id="@+id/cuenta_tv_precio"
-        style="@style/TextAppearance.Material3.BodyMedium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/cuenta_tv_titulo_precio"
-        app:layout_constraintStart_toStartOf="@+id/cuenta_tv_titulo_precio"
-        app:layout_constraintTop_toBottomOf="@+id/cuenta_tv_titulo_precio"
-        tools:text="precio" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/cuenta_tv_titulo_total"
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/cuenta_tv_titulo_total"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/cuenta_tv_items"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/cuenta_tv_items"
+                style="@style/TextAppearance.Material3.BodyMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/cuenta_tv_titulo_total"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cuenta_tv_titulo_total"
+                tools:text="Total items" />
+
+            <TextView
+                android:id="@+id/cuenta_tv_total"
+                style="@style/TextAppearance.Material3.BodyMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/cuenta_tv_items"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cuenta_tv_items"
+                app:layout_constraintTop_toTopOf="@+id/cuenta_tv_items"
+                tools:text="total a pagar" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
