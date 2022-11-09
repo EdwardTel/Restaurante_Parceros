@@ -46,8 +46,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             else{
-                var userEmail = etEmail.text.toString()
-                var userPass = etPass.text.toString()
+                val userEmail = etEmail.text.toString()
+                val userPass = etPass.text.toString()
                 singIn(userEmail,userPass)
             }
         }
@@ -68,7 +68,6 @@ class MainActivity : AppCompatActivity() {
 
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this){
             if(it.isSuccessful){
-                val user = firebaseAuth.currentUser
 
                 //Toast.makeText(baseContext,user?.uid.toString(), Toast.LENGTH_SHORT).show()
                 //Toast.makeText(baseContext,"Logueado Correctamente!", Toast.LENGTH_SHORT).show()

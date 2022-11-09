@@ -11,6 +11,8 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class RegistroActivity : AppCompatActivity() {
@@ -49,10 +51,10 @@ class RegistroActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                var pass = p0.toString()
+                val pass = p0.toString()
                 if(pass.length >= 8){
-                    var passPattern = """^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#${'$'}%!\-_?&])(?=\S+${'$'}).{8,}""".toRegex()
-                    var coincide = passPattern.matches(pass)
+                    val passPattern = """^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#${'$'}%!\-_?&])(?=\S+${'$'}).{8,}""".toRegex()
+                    val coincide = passPattern.matches(pass)
                     if(coincide) {
                         tilPass.helperText = "Contraseña fuerte"
                         tilPass.error = ""
@@ -82,11 +84,11 @@ class RegistroActivity : AppCompatActivity() {
                 Toast.makeText(baseContext,"Inválido, hay campos vacíos", Toast.LENGTH_SHORT).show()
             }
             else{
-                var userNombre = etNombre.text.toString()
-                var userApellido = etNombre.text.toString()
-                var userTelefono = etTelefono.text.toString()
-                var userEmail = etEmail.text.toString()
-                var userPass = etPass.text.toString()
+                val userNombre = etNombre.text.toString()
+                val userApellido = etApellido.text.toString()
+                val userTelefono = etTelefono.text.toString()
+                val userEmail = etEmail.text.toString()
+                val userPass = etPass.text.toString()
 
                 createAccount(userNombre, userApellido, userTelefono, userEmail, userPass)
             }
@@ -101,8 +103,21 @@ class RegistroActivity : AppCompatActivity() {
 
         firebaseAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(this){
             if(it.isSuccessful){
-                Toast.makeText(baseContext,"Creado Correctamente!", Toast.LENGTH_LONG).show()
-                this.finish()
+                val user = firebaseAuth.currentUser
+                val uid = user!!.uid
+                val map = hashMapOf(
+                    "Nombre" to nombre,
+                    "Apellido" to apellido,
+                    "Correo" to email,
+                    "Telefono" to telefono
+                )
+
+                val db = FirebaseFirestore.getInstance()
+
+                db.collection("usuarios").document(uid).set(map).addOnSuccessListener {
+                    Toast.makeText(baseContext,"Creado Correctamente!", Toast.LENGTH_LONG).show()
+                    this.finish()
+                }
             }
             else{
                 Snackbar.make(btnRegistrarse,"Error: ${it.exception}", Snackbar.LENGTH_LONG ).setTextMaxLines(5).show()

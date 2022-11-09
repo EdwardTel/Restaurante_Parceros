@@ -8,7 +8,7 @@
     <string name="login_chktv_aceptar">Acepto</string>
     <string name="home_tv_prueba">Home de la app</string>
     <string name="cambiar_pass_tv_correo">Ingresa tu correo</string>
-    <string name="fragment_tv_ordenar_title">Puedes ordenar multiples platos</string>
+    <string name="fragment_tv_ordenar_title">Puedes pedir multiples platos</string>
     <string name="fragment_tv_ordenar_mesa">Numero de tu mesa</string>
     <string name="entradas_list_tv_agregar">Toca para agregar</string>
     <string name="detail_tv_precio">Precio:</string>

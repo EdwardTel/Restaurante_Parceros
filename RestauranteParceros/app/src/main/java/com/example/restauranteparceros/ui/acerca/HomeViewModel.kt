@@ -8,7 +8,7 @@ import com.example.restauranteparceros.ui.OrganizadorMenu
 
 class HomeViewModel : ViewModel() {
 
-    val organizador = OrganizadorMenu()
+    private val organizador = OrganizadorMenu()
     var comidasEnBD : MutableList<Comidas> = mutableListOf()
 
     private var _entradas = MutableLiveData<MutableList<Comidas>>()

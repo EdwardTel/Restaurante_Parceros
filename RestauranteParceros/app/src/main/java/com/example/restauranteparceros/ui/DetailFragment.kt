@@ -59,6 +59,7 @@ class DetailFragment : Fragment() {
             val img = arguments?.getString("img")
             val precioUnitario = arguments?.getDouble("precio")
 
+            binding.fragmentDetailTvNombre.text = nombre
             binding.fragmentDetailTvDescripcion.text = descripcion
             binding.fragmentDetailTvPrecio.text = precioUnitario.toString()
             Glide.with(this).load(img).into(binding.fragmentDetailImagen)
