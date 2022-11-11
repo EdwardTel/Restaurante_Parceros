@@ -2,12 +2,22 @@
     <string name="app_name">Restaurante Parceros</string>
 
     <!-- TextViews -->
+    <string name="fragment_home_tv_acercade">Bem-vindos ao nosso paraíso gastronômico colombiano, onde nos orgulhamos dos sabores, temperos e criatividade dos melhores pratos do nosso país.\n\n Nos pretendemos preservar e estender a nossa cultura a paladares aventureiros interessados nas nossas requintadas tradições.
+    </string>
     <string name="login_tv_registrarse">Se Registrar</string>
     <string name="login_chktv_aceptar">Concordo Com Os Termos</string>
     <string name="home_tv_prueba">Home de la app</string>
     <string name="cambiar_pass_tv_correo">Digite Seu E-mail</string>
     <string name="fragment_tv_ordenar_title">Nosso Cardápio</string>
     <string name="fragment_tv_ordenar_mesa">Numero Da Sua Mesa</string>
+    <string name="entradas_list_tv_agregar">Clique Para Adicionar</string>
+    <string name="detail_tv_precio">Preço:</string>
+    <string name="detail_tv_descripcion">Descrição</string>
+
+    <string name="cuenta_tv_titulo_nombre">Nome</string>
+    <string name="cuenta_tv_titulo_cantidad">C.</string>
+    <string name="cuenta_tv_titulo_precio">Preço</string>
+    <string name="cuenta_tv_titulo_total">Total</string>
 
 
 
@@ -21,7 +31,7 @@
     <string name="registro_et_telefono_hint">Telefone</string>
     <string name="cambiar_pass_et_correo_hint">E-mail Da Sua Conta</string>
     <string name="fragment_et_ordenar_mesaNumero">Numero Da Sua Mesa</string>
-    <string name="recycler_et_cantidad_hint">Quantidade</string>
+    <string name="detail_et_cantidad_hint">Quantidad</string>
 
     <!-- TextInput Layout -->
     <string name="registro_email_placeholder">abc@def.com</string>
@@ -35,7 +45,6 @@
     <string name="registro_button_regresar">Voltar</string>
     <string name="registro_button_cambiar_pass">Esqueceu A Sua Senha?</string>
     <string name="cambiar_pass_button_enviar">Recupere Sua Conta</string>
-    <string name="title_activity_asdf">asdf</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -51,12 +60,18 @@
     <string name="fragment_btn_postres">Sobremesas</string>
     <string name="fragment_btn_bebidas">Bebidas</string>
     <string name="fragment_btn_ordenar">Fazer Um Pedido</string>
-    <string name="recycler_btn_agregar">Adicionar</string>
+    <string name="detail_btn_agregar">Adicionar</string>
+    <string name="fragment_detail_btn_regresar">Voltar</string>
 
-    <string name="menu_home">Nossa História</string>
-    <string name="menu_ordenes">Meus Pedidos</string>
-    <string name="menu_slideshow">Pagamento</string>
+    <string name="menu_home">Bem-vindo</string>
+    <string name="menu_ordenes">Pedir</string>
+    <string name="menu_slideshow">Pagar</string>
     <string name="ordenes_entradas">Aperitivos</string>
+    <string name="ordenes_platos">Pratos</string>
+    <string name="ordenes_postres">Sobremesas</string>
+    <string name="ordenes_bebidas">Bebidas</string>
+
+    <string name="detail">Detalhe</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
