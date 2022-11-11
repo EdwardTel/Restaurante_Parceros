@@ -2,8 +2,7 @@
     <string name="app_name">Restaurante Parceros</string>
 
     <!-- TextViews -->
-    <string name="fragment_home_tv_acercade">Bem-vindos ao nosso paraíso gastronômico colombiano, onde nos orgulhamos dos sabores, temperos e criatividade dos melhores pratos do nosso país.\n\n Nos pretendemos preservar e estender a nossa cultura a paladares aventureiros interessados nas nossas requintadas tradições.
-    </string>
+    <string name="fragment_home_tv_acercade">Bem-vind@ ao nosso paraíso da comida colombiana. Aqui, a gente pega o melhor do sabor, do tempero e da criatividade dos pratos do país. Queremos preservar e propagar a nossa cultura com todos os paladares que apreciam o requinte e o bom gosto.</string>
     <string name="login_tv_registrarse">Se Registrar</string>
     <string name="login_chktv_aceptar">Concordo Com Os Termos</string>
     <string name="home_tv_prueba">Home de la app</string>
