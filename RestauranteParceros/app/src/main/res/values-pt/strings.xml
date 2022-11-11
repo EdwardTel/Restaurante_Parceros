@@ -8,7 +8,7 @@
     <string name="login_chktv_aceptar">Concordo Com Os Termos</string>
     <string name="home_tv_prueba">Home de la app</string>
     <string name="cambiar_pass_tv_correo">Digite Seu E-mail</string>
-    <string name="fragment_tv_ordenar_title">Nosso Cardápio</string>
+    <string name="fragment_tv_ordenar_title">pode selecionar vários pratos</string>
     <string name="fragment_tv_ordenar_mesa">Numero Da Sua Mesa</string>
     <string name="entradas_list_tv_agregar">Clique Para Adicionar</string>
     <string name="detail_tv_precio">Preço:</string>
@@ -19,7 +19,8 @@
     <string name="cuenta_tv_titulo_precio">Preço</string>
     <string name="cuenta_tv_titulo_total">Total</string>
 
-
+    <string name="fragment_ordenes_tv_estado_seleccionado">selecionado</string>
+    <string name="fragment_ordenes_tv_estado_no_seleccionado">não selecionado</string>
 
     <!-- EditText -->
     <string name="login_et_correo_hint">E-mail</string>
@@ -38,7 +39,7 @@
     <string name="fragment_tv_ordenar_mesa_helper">Deixe Em Branco Se For Delivery</string>
 
     <!-- Buttons -->
-    <string name="login_button_login">Login</string>
+    <string name="login_button_login">Log in</string>
     <string name="login_button_registrarse"><u>Criar Conta</u></string>
     <string name="registro_button_registrar">Cadastro</string>
     <string name="home_button_regresar">Voltar</string>
@@ -54,7 +55,7 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Sair</string>
     <string name="fragment_btn_entradas">Aperitivos</string>
     <string name="fragment_btn_platos">Pratos Quentes</string>
     <string name="fragment_btn_postres">Sobremesas</string>

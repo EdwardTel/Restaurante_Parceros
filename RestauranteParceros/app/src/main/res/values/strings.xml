@@ -19,6 +19,8 @@
     <string name="cuenta_tv_titulo_precio">Precio</string>
     <string name="cuenta_tv_titulo_total">Total</string>
 
+    <string name="fragment_ordenes_tv_estado_seleccionado">seleccionado</string>
+    <string name="fragment_ordenes_tv_estado_no_seleccionado">sin seleccionar</string>
 
     <!-- EditText -->
     <string name="login_et_correo_hint">Correo</string>
@@ -54,7 +56,7 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Salir</string>
+    <string name="action_settings">Cerrar sesión</string>
     <string name="fragment_btn_entradas">Entradas</string>
     <string name="fragment_btn_platos">Platos</string>
     <string name="fragment_btn_postres">Postres</string>

@@ -53,17 +53,20 @@ class OrdenesFragment : Fragment() {
         val colorNoSelection = Color.parseColor("#853BD9")
         val colorSelection = Color.parseColor("#36D99A")
 
+        val textSeleccionado = getString(R.string.fragment_ordenes_tv_estado_seleccionado)
+        val textNoSeleccionado = getString(R.string.fragment_ordenes_tv_estado_no_seleccionado)
+
         tvCheckEntradas.setTextColor(colorNoSelection)
-        tvCheckEntradas.text= "Sin seleccionar"
+        tvCheckEntradas.text= textNoSeleccionado
 
         tvCheckPlatos.setTextColor(colorNoSelection)
-        tvCheckPlatos.text= "Sin seleccionar"
+        tvCheckPlatos.text= textNoSeleccionado
 
         tvCheckPostres.setTextColor(colorNoSelection)
-        tvCheckPostres.text= "Sin seleccionar"
+        tvCheckPostres.text= textNoSeleccionado
 
         tvCheckBebidas.setTextColor(colorNoSelection)
-        tvCheckBebidas.text= "Sin seleccionar"
+        tvCheckBebidas.text= textNoSeleccionado
 
         //#36D99A color para los seleccionados
 
@@ -71,22 +74,22 @@ class OrdenesFragment : Fragment() {
             for(pedido in cuentaViewModel.listaPedidos){
                 if(pedido.tipo == "Entrada"){
                     tvCheckEntradas.setTextColor(colorSelection)
-                    tvCheckEntradas.text= "Seleccionado"
+                    tvCheckEntradas.text= textSeleccionado
                 }
 
                 if(pedido.tipo=="Plato"){
                     tvCheckPlatos.setTextColor(colorSelection)
-                    tvCheckPlatos.text= "Seleccionado"
+                    tvCheckPlatos.text= textSeleccionado
                 }
 
                 if(pedido.tipo == "Postre"){
                     tvCheckPostres.setTextColor(colorSelection)
-                    tvCheckPostres.text= "Seleccionado"
+                    tvCheckPostres.text= textSeleccionado
                 }
 
                 if(pedido.tipo == "Bebida"){
                     tvCheckBebidas.setTextColor(colorSelection)
-                    tvCheckBebidas.text= "Seleccionado"
+                    tvCheckBebidas.text= textSeleccionado
                 }
             }
         }
